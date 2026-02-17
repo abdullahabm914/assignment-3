@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PSL Final Ticket Booking</title>
+
+<style>
+
+/* ===============================
+   GLOBAL STYLES
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* ===============================
+   CARD CONTAINER
+================================= */
+
+.card {
+    background: #1c1c1c;
+    padding: 30px;
+    border-radius: 15px;
+    width: 400px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+h2, h4 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* ===============================
+   FORM STYLING
+================================= */
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+}
+
+/* ===============================
+   CUSTOM BUTTON (Specificity Win)
+================================= */
+
+.btn {
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    border: none;
+}
+
+/* More specific than .btn */
+.btn.btn-qalandar {
+    background: #000;
+    color: gold;
+    border: 1px solid gold;
+    font-weight: bold;
+}
+
+.btn.btn-qalandar:hover {
+    background: gold;
+    color: #000;
+}
+
+/* ===============================
+   CSS MODAL (No JS)
+================================= */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #222;
+    padding: 25px;
+    border-radius: 10px;
+    width: 350px;
+    text-align: center;
+}
+
+.modal-content p {
+    margin: 10px 0;
+}
+
+.close-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 15px;
+    background: gold;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Show modal when targeted */
+#confirmModal:target {
+    display: flex;
+}
+
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h2>PSL Final – Lahore</h2>
+    <h4>Lahore Qalandars vs Karachi Kings</h4>
+
+    <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" placeholder="Enter your name">
+    </div>
+
+    <div class="form-group">
+        <label>CNIC Number</label>
+        <input type="text" placeholder="XXXXX-XXXXXXX-X">
+    </div>
+
+    <div class="form-group">
+        <label>Select Enclosure</label>
+        <select>
+            <option>Imran Khan Enclosure</option>
+            <option>Fazal Mahmood Enclosure</option>
+            <option>Wasim Akram Enclosure</option>
+        </select>
+    </div>
+
+    <!-- Button opens modal -->
+    <a href="#confirmModal" class="btn btn-qalandar">
+        Book Ticket
+    </a>
+</div>
+
+<!-- Modal -->
+<div id="confirmModal" class="modal">
+    <div class="modal-content">
+        <h3>Confirm Booking</h3>
+        <p>Confirm your seat?</p>
+        <p style="color: gold; font-weight: bold;">
+            Tickets are non-refundable!
+        </p>
+
+        <a href="#" class="close-btn">Close</a>
+    </div>
+</div>
+
+</body>
+</html>
